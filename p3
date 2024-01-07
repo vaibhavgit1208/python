@@ -1,0 +1,31 @@
+class Base:
+    def __init__(self):
+        self.a = 10
+        self._b = 20
+
+    def display(self):
+        print("The values are:")
+        print(f"a={self.a} b={self._b}")
+
+
+class Derived(Base):
+    def __init__(self):
+        super().__init__()
+        self.d = 30
+
+    def display(self):
+        super().display()
+        print(f"d={self.d}")
+
+    def __add__(self, ob):
+        return self.a + ob.a + self.d + ob.d
+
+
+obj1 = Base()
+obj2 = Derived()
+obj3 = Derived()
+
+obj2.display()
+obj3.display()
+
+print("\nSum of two objects:", obj2 + obj3)
