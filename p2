@@ -1,0 +1,9 @@
+import bisect
+
+def insert(lst, n):
+    bisect.insort(lst, n)
+    return lst
+
+lst = [1, 2, 4]
+n = eval(input("Enter the value to be inserted: "))
+print(insert(lst, n))
